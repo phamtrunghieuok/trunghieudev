@@ -1,0 +1,2700 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Tools Shop - Mua bán công cụ Python chuyên nghiệp</title>
+    <meta name="description" content="Shop bán các công cụ Python chuyên nghiệp với thanh toán banking an toàn">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+:root {
+    --primary-color: #3776ab;
+    --secondary-color: #ffd43b;
+    --accent-color: #306998;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --border-radius: 15px;
+    --box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    --code-font: 'JetBrains Mono', monospace;
+    --main-font: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    animation: backgroundShift 30s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    25% { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
+    50% { background: linear-gradient(135deg, #3776ab 0%, #306998 100%); }
+    75% { background: linear-gradient(135deg, #306998 0%, #3776ab 100%); }
+}
+
+/* Header Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: var(--box-shadow);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-family: var(--code-font);
+    font-size: 1.5rem;
+}
+
+.navbar-brand i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.btn-python {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-python::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-python:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(55, 118, 171, 0.3);
+    color: white;
+}
+
+.btn-python:hover::before {
+    left: 100%;
+}
+
+.btn-outline-python {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    border-radius: var(--border-radius);
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.btn-outline-python:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, rgba(55, 118, 171, 0.95), rgba(48, 105, 152, 0.95)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    color: white;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,212,59,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,212,59,0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    animation: slideInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: slideInUp 1s ease-out 0.2s both;
+}
+
+.code-snippet {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    font-family: var(--code-font);
+    font-size: 14px;
+    margin: 30px 0;
+    border-left: 5px solid var(--secondary-color);
+    backdrop-filter: blur(10px);
+    animation: slideInUp 1s ease-out 0.4s both;
+}
+
+/* Tool Cards */
+.tool-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--box-shadow);
+    height: 100%;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(55, 118, 171, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.tool-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(55, 118, 171, 0.2);
+}
+
+.tool-card:hover::before {
+    left: 100%;
+}
+
+.tool-card .card-header {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 25px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.price-tag {
+    background: linear-gradient(45deg, var(--secondary-color), #ffed4e);
+    color: var(--dark-color);
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 4px 15px rgba(255, 212, 59, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.difficulty-badge {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.difficulty-beginner {
+    background: linear-gradient(45deg, var(--success-color), #34ce57);
+    color: white;
+}
+
+.difficulty-intermediate {
+    background: linear-gradient(45deg, var(--warning-color), #ffcd39);
+    color: var(--dark-color);
+}
+
+.difficulty-advanced {
+    background: linear-gradient(45deg, var(--danger-color), #e55353);
+    color: white;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tech-tag {
+    background: linear-gradient(145deg, var(--light-color), #e9ecef);
+    color: var(--dark-color);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    transform: scale(1.1);
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Categories */
+.category-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 100px 0;
+    margin: 50px 0;
+    border-radius: var(--border-radius);
+}
+
+.category-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 50px 25px;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.category-card:hover {
+    transform: scale(1.08) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+}
+
+.category-card:hover::before {
+    opacity: 1;
+}
+
+.category-icon {
+    font-size: 4.5rem;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Banking Payment */
+.payment-section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin: 30px 0;
+    box-shadow: var(--box-shadow);
+}
+
+.bank-card {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.bank-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.3s;
+}
+
+.bank-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(30, 60, 114, 0.4);
+}
+
+.bank-card:hover::before {
+    transform: scale(1);
+}
+
+.bank-card.selected {
+    border: 3px solid var(--secondary-color);
+    box-shadow: 0 0 20px rgba(255, 212, 59, 0.5);
+}
+
+.qr-code {
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin: 20px 0;
+    box-shadow: var(--box-shadow);
+}
+
+/* Admin Panel */
+.admin-panel {
+    display: none;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    background: linear-gradient(180deg, var(--dark-color) 0%, #495057 100%);
+    color: white;
+    min-height: 100vh;
+    padding: 20px 0;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+}
+
+.admin-nav-link {
+    color: #adb5bd;
+    padding: 15px 25px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+}
+
+.admin-nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 212, 59, 0.2);
+    transition: width 0.3s;
+}
+
+.admin-nav-link:hover, .admin-nav-link.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+.admin-nav-link:hover::before {
+    width: 100%;
+}
+
+.admin-content {
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.stats-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: var(--border-radius);
+    padding: 35px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stats-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.stats-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.data-table {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.table th {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 20px 15px;
+}
+
+.table td {
+    padding: 15px;
+    border-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+    background: rgba(55, 118, 171, 0.05);
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.modal-header {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-bottom: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.form-control, .form-select {
+    border-radius: var(--border-radius);
+    border: 2px solid #dee2e6;
+    padding: 15px 18px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(55, 118, 171, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Cart Styles */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100vh;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1050;
+    overflow-y: auto;
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+.cart-sidebar.show {
+    right: 0;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.cart-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-header {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cart-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+    background: rgba(55, 118, 171, 0.05);
+}
+
+.cart-total {
+    background: linear-gradient(145deg, var(--light-color), #e9ecef);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    margin: 25px;
+    border: 2px solid var(--primary-color);
+}
+
+/* Login Form */
+.login-form {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: var(--border-radius);
+    padding: 50px;
+    box-shadow: var(--box-shadow);
+    max-width: 450px;
+    margin: 80px auto;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-scale {
+    animation: fadeInScale 0.6s ease-out;
+}
+
+/* Loading States */
+.loading {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(55, 118, 171, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1060;
+}
+
+.toast {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(10px);
+}
+
+/* Page Sections */
+.page-section {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+    animation: fadeInScale 0.6s ease-out;
+}
+
+/* Enhanced Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        padding: 80px 0;
+    }
+    
+    .tool-card {
+        margin-bottom: 30px;
+    }
+    
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .admin-sidebar {
+        position: fixed;
+        left: -300px;
+        width: 300px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+    
+    .admin-sidebar.show {
+        left: 0;
+    }
+    
+    .stats-number {
+        font-size: 2.2rem;
+    }
+    
+    .category-icon {
+        font-size: 3.5rem;
+    }
+    
+    .tool-icon {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .login-form {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    .stats-card {
+        padding: 20px;
+    }
+    
+    .category-card {
+        padding: 30px 15px;
+    }
+}
+
+/* Code Syntax Highlighting */
+.code-preview {
+    background: linear-gradient(145deg, #2d3748, #4a5568);
+    color: #e2e8f0;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    font-family: var(--code-font);
+    font-size: 14px;
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.code-keyword { color: #63b3ed; }
+.code-string { color: #68d391; }
+.code-comment { color: #a0aec0; font-style: italic; }
+.code-function { color: #fbb6ce; }
+
+/* Enhanced hover effects */
+.hover-lift:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(55, 118, 171, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Progress indicators */
+.progress-modern {
+    height: 8px;
+    border-radius: 10px;
+    background: rgba(55, 118, 171, 0.2);
+    overflow: hidden;
+}
+
+.progress-modern .progress-bar {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+</style>
+</head>
+<body>
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                <i class="fab fa-python"></i> Python Tools Shop
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('home')">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('tools')">Công cụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('categories')">Danh mục</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="toggleCart()">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-danger" id="cartCount">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="loginNav">
+                        <button class="btn btn-outline-python" onclick="showLogin()">Đăng nhập</button>
+                    </li>
+                    <li class="nav-item" id="adminNav" style="display: none;">
+                        <button class="btn btn-python" onclick="showAdmin()">Admin</button>
+                    </li>
+                    <li class="nav-item" id="logoutNav" style="display: none;">
+                        <button class="btn btn-outline-danger" onclick="logout()">Đăng xuất</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page-section active">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Python Tools Shop</h1>
+                            <p class="hero-subtitle">
+                                Khám phá và mua các công cụ Python chuyên nghiệp được phát triển bởi các chuyên gia hàng đầu
+                            </p>
+                            <div class="d-flex gap-3 mb-4">
+                                <button class="btn btn-python btn-lg" onclick="showPage('tools')">
+                                    <i class="fas fa-tools"></i> Xem công cụ
+                                </button>
+                                <button class="btn btn-outline-light btn-lg" onclick="showPage('categories')">
+                                    <i class="fas fa-list"></i> Danh mục
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="code-snippet">
+                            <div class="code-preview">
+<span class="code-comment"># Ví dụ sử dụng công cụ từ shop</span>
+<span class="code-keyword">from</span> python_tools <span class="code-keyword">import</span> WebScraper, AutoTrader
+
+<span class="code-comment"># Khởi tạo web scraper</span>
+scraper = <span class="code-function">WebScraper</span>(api_key=<span class="code-string">"your-api-key"</span>)
+data = scraper.<span class="code-function">scrape</span>(<span class="code-string">"https://example.com"</span>)
+
+<span class="code-comment"># Khởi tạo auto trader</span>
+trader = <span class="code-function">AutoTrader</span>(api_key=<span class="code-string">"your-api-key"</span>)
+trader.<span class="code-function">start_trading</span>()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="category-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 fw-bold mb-3">Tính năng nổi bật</h2>
+                    <p class="lead">Những điều làm nên sự khác biệt của Python Tools Shop</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="category-card fade-in-up">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Bảo mật cao</h4>
+                            <p>Thanh toán banking an toàn, mã hóa end-to-end</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="category-card fade-in-up">
+                            <div class="category-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4>Hiệu suất cao</h4>
+                            <p>Công cụ được tối ưu hóa cho tốc độ và hiệu năng</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="category-card fade-in-up">
+                            <div class="category-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4>Hỗ trợ 24/7</h4>
+                            <p>Đội ngũ support nhiệt tình, phản hồi nhanh chóng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tools Page -->
+    <div id="tools" class="page-section">
+        <div class="container" style="margin-top: 100px;">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">Công cụ Python</h2>
+                <p class="lead">Bộ sưu tập các công cụ Python chuyên nghiệp</p>
+            </div>
+            
+            <!-- Filter -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <select class="form-select" id="categoryFilter" onchange="filterTools()">
+                        <option value="">Tất cả danh mục</option>
+                        <option value="scraping">Web Scraping</option>
+                        <option value="trading">Auto Trading</option>
+                        <option value="analysis">Data Analysis</option>
+                        <option value="automation">Automation</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-select" id="priceFilter" onchange="filterTools()">
+                        <option value="">Tất cả giá</option>
+                        <option value="0-500000">Dưới 500k</option>
+                        <option value="500000-1000000">500k - 1M</option>
+                        <option value="1000000-2000000">1M - 2M</option>
+                        <option value="2000000-999999999">Trên 2M</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Tools Grid -->
+            <div class="row g-4" id="toolsGrid">
+                <!-- Tools will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Page -->
+    <div id="categories" class="page-section">
+        <div class="container" style="margin-top: 100px;">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">Danh mục công cụ</h2>
+                <p class="lead">Khám phá các loại công cụ Python theo chuyên môn</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card hover-lift" onclick="filterByCategory('scraping')">
+                        <div class="category-icon">
+                            <i class="fas fa-spider"></i>
+                        </div>
+                        <h4>Web Scraping</h4>
+                        <p>Thu thập dữ liệu web tự động</p>
+                        <small>15 công cụ</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card hover-lift" onclick="filterByCategory('trading')">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Auto Trading</h4>
+                        <p>Bot giao dịch tự động</p>
+                        <small>8 công cụ</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card hover-lift" onclick="filterByCategory('analysis')">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Data Analysis</h4>
+                        <p>Phân tích dữ liệu chuyên sâu</p>
+                        <small>12 công cụ</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card hover-lift" onclick="filterByCategory('automation')">
+                        <div class="category-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>Automation</h4>
+                        <p>Tự động hóa quy trình</p>
+                        <small>10 công cụ</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đăng nhập</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-python w-100 mb-3">Đăng nhập</button>
+                        
+                        <div class="text-center">
+                            <button type="button" class="btn btn-link" onclick="showForgotPassword()" data-bs-dismiss="modal">
+                                Quên mật khẩu?
+                            </button>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="text-center">
+                            <p class="mb-2">Chưa có tài khoản?</p>
+                            <button type="button" class="btn btn-outline-python" onclick="showRegister()" data-bs-dismiss="modal">
+                                Đăng ký ngay
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đăng ký tài khoản</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="regUsername" class="form-label">Tên đăng nhập</label>
+                            <input type="text" class="form-control" id="regUsername" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="regEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regPassword" class="form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" id="regPassword" required minlength="6">
+                        </div>
+                        <div class="mb-3">
+                            <label for="regConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
+                            <input type="password" class="form-control" id="regConfirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-python w-100 mb-3">Đăng ký</button>
+                        
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i>
+                            Tài khoản sẽ được admin xác thực trong vòng 24h.
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="button" class="btn btn-link" onclick="showLogin()" data-bs-dismiss="modal">
+                                Đã có tài khoản? Đăng nhập
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quên mật khẩu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="forgotPasswordForm">
+                        <div class="mb-3">
+                            <label for="forgotEmail" class="form-label">Email đăng ký</label>
+                            <input type="email" class="form-control" id="forgotEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-python w-100 mb-3">Lấy lại mật khẩu</button>
+                        
+                        <div class="text-center">
+                            <button type="button" class="btn btn-link" onclick="showLogin()" data-bs-dismiss="modal">
+                                Quay lại đăng nhập
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="productModalBody">
+                    <!-- Product details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-python" id="addToCartBtn">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thanh toán</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="payment-section">
+                        <h6 class="mb-3">Chọn phương thức thanh toán</h6>
+                        
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="bank-card" onclick="selectBank('vietcombank')">
+                                    <h6><i class="fas fa-university"></i> Vietcombank</h6>
+                                    <p class="mb-0">STK: 1234567890</p>
+                                    <small>Chủ TK: PYTHON TOOLS SHOP</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bank-card" onclick="selectBank('techcombank')">
+                                    <h6><i class="fas fa-university"></i> Techcombank</h6>
+                                    <p class="mb-0">STK: 0987654321</p>
+                                    <small>Chủ TK: PYTHON TOOLS SHOP</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bank-card" onclick="selectBank('mbbank')">
+                                    <h6><i class="fas fa-university"></i> MB Bank</h6>
+                                    <p class="mb-0">STK: 1122334455</p>
+                                    <small>Chủ TK: PYTHON TOOLS SHOP</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bank-card" onclick="selectBank('momo')">
+                                    <h6><i class="fas fa-mobile-alt"></i> MoMo</h6>
+                                    <p class="mb-0">SĐT: 0901234567</p>
+                                    <small>Tên: PYTHON TOOLS SHOP</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="qrCodeSection" class="mt-4" style="display: none;">
+                            <div class="qr-code">
+                                <h6>Quét mã QR để thanh toán</h6>
+                                <div id="qrCodeImage"></div>
+                                <p class="mt-3">
+                                    <strong>Số tiền:</strong> <span id="paymentAmount"></span><br>
+                                    <strong>Nội dung:</strong> <span id="paymentContent"></span>
+                                </p>
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    Sau khi chuyển khoản, hệ thống sẽ tự động xác nhận và gửi sản phẩm qua email.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h6>Thông tin đơn hàng</h6>
+                            <div id="orderSummary"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-python" id="confirmPaymentBtn" style="display: none;" onclick="confirmPayment()">
+                        Xác nhận thanh toán
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h5 class="mb-0">
+                <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                <button class="btn btn-link text-white float-end" onclick="toggleCart()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </h5>
+        </div>
+        
+        <div id="cartItems"></div>
+        
+        <div class="cart-total">
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Tổng cộng:</strong>
+                <strong id="cartTotalAmount">0₫</strong>
+            </div>
+            <button class="btn btn-python w-100" onclick="checkout()" id="checkoutBtn" disabled>
+                Thanh toán
+            </button>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="row g-0">
+            <div class="col-md-3">
+                <div class="admin-sidebar">
+                    <div class="p-3">
+                        <h5 class="text-white">
+                            <i class="fas fa-cog"></i> Admin Panel
+                        </h5>
+                    </div>
+                    <nav>
+                        <a href="#" class="admin-nav-link active" onclick="showAdminPage('dashboard')">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                        <a href="#" class="admin-nav-link" onclick="showAdminPage('products')">
+                            <i class="fas fa-box"></i> Quản lý sản phẩm
+                        </a>
+                        <a href="#" class="admin-nav-link" onclick="showAdminPage('orders')">
+                            <i class="fas fa-shopping-bag"></i> Đơn hàng
+                        </a>
+                        <a href="#" class="admin-nav-link" onclick="showAdminPage('users')">
+                            <i class="fas fa-users"></i> Người dùng
+                        </a>
+                        <a href="#" class="admin-nav-link" onclick="showAdminPage('analytics')">
+                            <i class="fas fa-chart-line"></i> Thống kê
+                        </a>
+                        <a href="#" class="admin-nav-link" onclick="showAdminPage('settings')">
+                            <i class="fas fa-cog"></i> Cài đặt
+                        </a>
+                    </nav>
+                    <div class="p-3 mt-auto">
+                        <button class="btn btn-outline-light w-100" onclick="showPage('home')">
+                            <i class="fas fa-arrow-left"></i> Về shop
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <div class="admin-content">
+                    <!-- Dashboard -->
+                    <div id="adminDashboard" class="admin-section">
+                        <h2 class="mb-4">Dashboard</h2>
+                        
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-3">
+                                <div class="stats-card">
+                                    <div class="stats-number" id="totalProducts">0</div>
+                                    <div>Sản phẩm</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card">
+                                    <div class="stats-number" id="totalOrders">0</div>
+                                    <div>Đơn hàng</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card">
+                                    <div class="stats-number" id="totalUsers">0</div>
+                                    <div>Người dùng</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card">
+                                    <div class="stats-number" id="totalRevenue">0₫</div>
+                                    <div>Doanh thu</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="data-table">
+                                    <h5 class="p-3 mb-0">Đơn hàng gần đây</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Khách hàng</th>
+                                                    <th>Tổng tiền</th>
+                                                    <th>Trạng thái</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="recentOrdersTable">
+                                                <!-- Recent orders will be loaded here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="data-table">
+                                    <h5 class="p-3 mb-0">Sản phẩm bán chạy</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Sản phẩm</th>
+                                                    <th>Đã bán</th>
+                                                    <th>Doanh thu</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="topProductsTable">
+                                                <!-- Top products will be loaded here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Management -->
+                    <div id="adminProducts" class="admin-section" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Quản lý sản phẩm</h2>
+                            <button class="btn btn-python" data-bs-toggle="modal" data-bs-target="#productFormModal">
+                                <i class="fas fa-plus"></i> Thêm sản phẩm
+                            </button>
+                        </div>
+                        
+                        <div class="data-table">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Danh mục</th>
+                                            <th>Giá</th>
+                                            <th>Trạng thái</th>
+                                            <th>Hành động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="productsTable">
+                                        <!-- Products will be loaded here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders Management -->
+                    <div id="adminOrders" class="admin-section" style="display: none;">
+                        <h2 class="mb-4">Quản lý đơn hàng</h2>
+                        
+                        <div class="data-table">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Khách hàng</th>
+                                            <th>Email</th>
+                                            <th>Sản phẩm</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Trạng thái</th>
+                                            <th>Ngày đặt</th>
+                                            <th>Hành động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ordersTable">
+                                        <!-- Orders will be loaded here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Users Management -->
+                    <div id="adminUsers" class="admin-section" style="display: none;">
+                        <h2 class="mb-4">Quản lý người dùng</h2>
+                        
+                        <div class="data-table">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tên đăng nhập</th>
+                                            <th>Email</th>
+                                            <th>Đơn hàng</th>
+                                            <th>Tổng mua</th>
+                                            <th>Ngày tham gia</th>
+                                            <th>Hành động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="usersTable">
+                                        <!-- Users will be loaded here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics -->
+                    <div id="adminAnalytics" class="admin-section" style="display: none;">
+                        <h2 class="mb-4">Thống kê & Phân tích</h2>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="stats-card">
+                                    <h5>Doanh thu theo tháng</h5>
+                                    <canvas id="revenueChart" width="400" height="200"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="stats-card">
+                                    <h5>Sản phẩm theo danh mục</h5>
+                                    <canvas id="categoryChart" width="400" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings -->
+                    <div id="adminSettings" class="admin-section" style="display: none;">
+                        <h2 class="mb-4">Cài đặt hệ thống</h2>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="stats-card">
+                                    <h5>Thông tin ngân hàng</h5>
+                                    <form id="bankSettingsForm">
+                                        <div class="mb-3">
+                                            <label class="form-label">Vietcombank STK</label>
+                                            <input type="text" class="form-control" id="vietcombankSTK" value="1234567890">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Techcombank STK</label>
+                                            <input type="text" class="form-control" id="techcombankSTK" value="0987654321">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">MB Bank STK</label>
+                                            <input type="text" class="form-control" id="mbbankSTK" value="1122334455">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">MoMo SĐT</label>
+                                            <input type="text" class="form-control" id="momoPhone" value="0901234567">
+                                        </div>
+                                        <button type="submit" class="btn btn-python">Lưu cài đặt</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="stats-card">
+                                    <h5>Xuất/Nhập dữ liệu</h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-outline-python" onclick="exportData()">
+                                            <i class="fas fa-download"></i> Xuất dữ liệu
+                                        </button>
+                                        <input type="file" id="importFile" accept=".json" style="display: none;" onchange="importData(this)">
+                                        <button class="btn btn-outline-python" onclick="document.getElementById('importFile').click()">
+                                            <i class="fas fa-upload"></i> Nhập dữ liệu
+                                        </button>
+                                        <button class="btn btn-outline-danger" onclick="clearAllData()">
+                                            <i class="fas fa-trash"></i> Xóa tất cả dữ liệu
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Form Modal -->
+    <div class="modal fade" id="productFormModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productFormTitle">Thêm sản phẩm mới</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <input type="hidden" id="productId">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="productName" class="form-label">Tên sản phẩm</label>
+                                <input type="text" class="form-control" id="productName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="productCategory" class="form-label">Danh mục</label>
+                                <select class="form-select" id="productCategory" required>
+                                    <option value="">Chọn danh mục</option>
+                                    <option value="scraping">Web Scraping</option>
+                                    <option value="trading">Auto Trading</option>
+                                    <option value="analysis">Data Analysis</option>
+                                    <option value="automation">Automation</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="productPrice" class="form-label">Giá (VNĐ)</label>
+                                <input type="number" class="form-control" id="productPrice" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="productDifficulty" class="form-label">Độ khó</label>
+                                <select class="form-select" id="productDifficulty" required>
+                                    <option value="">Chọn độ khó</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="productDescription" class="form-label">Mô tả</label>
+                                <textarea class="form-control" id="productDescription" rows="3" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="productFeatures" class="form-label">Tính năng (mỗi dòng một tính năng)</label>
+                                <textarea class="form-control" id="productFeatures" rows="4"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="productTech" class="form-label">Công nghệ sử dụng (cách nhau bởi dấu phẩy)</label>
+                                <input type="text" class="form-control" id="productTech" placeholder="Python, Selenium, BeautifulSoup">
+                            </div>
+                            <div class="col-12">
+                                <label for="productCode" class="form-label">Code demo</label>
+                                <textarea class="form-control" id="productCode" rows="5" style="font-family: var(--code-font);"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-python" onclick="saveProduct()">Lưu sản phẩm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Manager Modal -->
+    <div class="modal fade" id="keyManagerModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quản lý Keys - <span id="keyManagerUserName"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="keyManagerUserId">
+                    
+                    <!-- Current Keys -->
+                    <h6>Keys hiện tại:</h6>
+                    <div id="userKeysList" class="mb-4">
+                        <!-- User keys will be loaded here -->
+                    </div>
+                    
+                    <!-- Add New Key -->
+                    <h6>Thêm key mới:</h6>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Sản phẩm</label>
+                            <select class="form-select" id="addKeyProductSelect">
+                                <!-- Products will be loaded here -->
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Thời hạn (ngày)</label>
+                            <input type="number" class="form-control" id="addKeyDuration" value="30" min="1">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-python" onclick="addKeyToUser()">
+                                <i class="fas fa-plus"></i> Thêm Key
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Global variables
+        let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let settings = JSON.parse(localStorage.getItem('settings')) || {
+            banks: {
+                vietcombank: '1234567890',
+                techcombank: '0987654321',
+                mbbank: '1122334455',
+                momo: '0901234567'
+            }
+        };
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLogin();
+            loadProducts();
+            updateCartDisplay();
+            
+            // Initialize default products if empty
+            if (products.length === 0) {
+                initializeDefaultProducts();
+            }
+            
+            // Initialize default admin user
+            if (users.length === 0) {
+                users.push({
+                    id: 1,
+                    username: 'admin',
+                    password: 'admin123',
+                    email: 'admin@pythontools.com',
+                    role: 'admin',
+                    isVerified: true,
+                    keys: [],
+                    createdAt: new Date().toISOString()
+                });
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+        });
+
+        // Authentication functions
+        function checkLogin() {
+            if (currentUser) {
+                document.getElementById('loginNav').style.display = 'none';
+                document.getElementById('logoutNav').style.display = 'block';
+                
+                if (currentUser.role === 'admin') {
+                    document.getElementById('adminNav').style.display = 'block';
+                }
+            }
+        }
+
+        function showLogin() {
+            new bootstrap.Modal(document.getElementById('loginModal')).show();
+        }
+
+        function showRegister() {
+            new bootstrap.Modal(document.getElementById('registerModal')).show();
+        }
+
+        function showForgotPassword() {
+            new bootstrap.Modal(document.getElementById('forgotPasswordModal')).show();
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            const user = users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                if (!user.isVerified) {
+                    showToast('Tài khoản chưa được xác thực. Vui lòng liên hệ admin!', 'warning');
+                    return;
+                }
+                
+                currentUser = user;
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                
+                bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();
+                checkLogin();
+                showToast('Đăng nhập thành công!', 'success');
+                
+                if (user.role === 'admin') {
+                    setTimeout(() => showAdmin(), 500);
+                }
+            } else {
+                showToast('Sai email hoặc mật khẩu!', 'error');
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('regUsername').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                showToast('Mật khẩu không khớp!', 'error');
+                return;
+            }
+            
+            if (users.find(u => u.email === email)) {
+                showToast('Email đã được sử dụng!', 'error');
+                return;
+            }
+            
+            if (users.find(u => u.username === username)) {
+                showToast('Tên đăng nhập đã được sử dụng!', 'error');
+                return;
+            }
+            
+            const newUser = {
+                id: Date.now(),
+                username: username,
+                email: email,
+                password: password,
+                role: 'user',
+                isVerified: false,
+                keys: [],
+                createdAt: new Date().toISOString()
+            };
+            
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            bootstrap.Modal.getInstance(document.getElementById('registerModal')).hide();
+            showToast('Đăng ký thành công! Vui lòng chờ admin xác thực tài khoản.', 'success');
+        });
+
+        document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('forgotEmail').value;
+            const user = users.find(u => u.email === email);
+            
+            if (user) {
+                // Generate temporary password
+                const tempPassword = 'temp' + Math.random().toString(36).substring(2, 8);
+                user.tempPassword = tempPassword;
+                user.tempPasswordExpiry = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
+                
+                localStorage.setItem('users', JSON.stringify(users));
+                
+                showToast(`Mật khẩu tạm thời: ${tempPassword} (có hiệu lực 24h)`, 'success');
+                bootstrap.Modal.getInstance(document.getElementById('forgotPasswordModal')).hide();
+            } else {
+                showToast('Email không tồn tại trong hệ thống!', 'error');
+            }
+        });
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            
+            document.getElementById('loginNav').style.display = 'block';
+            document.getElementById('logoutNav').style.display = 'none';
+            document.getElementById('adminNav').style.display = 'none';
+            
+            showPage('home');
+            showToast('Đăng xuất thành công!', 'success');
+        }
+
+        // Page navigation
+        function showPage(pageName) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Hide admin panel
+            document.getElementById('adminPanel').style.display = 'none';
+            
+            // Show selected page
+            document.getElementById(pageName).classList.add('active');
+            
+            // Load page-specific content
+            if (pageName === 'tools') {
+                displayTools();
+            }
+        }
+
+        function showAdmin() {
+            if (!currentUser || currentUser.role !== 'admin') {
+                showToast('Bạn không có quyền truy cập!', 'error');
+                return;
+            }
+            
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById('adminPanel').style.display = 'block';
+            loadAdminDashboard();
+        }
+
+        // Product functions
+        function initializeDefaultProducts() {
+            const defaultProducts = [
+                {
+                    id: 1,
+                    name: 'Web Scraper Pro',
+                    category: 'scraping',
+                    price: 899000,
+                    difficulty: 'intermediate',
+                    description: 'Công cụ thu thập dữ liệu web mạnh mẽ với khả năng xử lý JavaScript và bypass anti-bot',
+                    features: ['Hỗ trợ JavaScript rendering', 'Bypass Cloudflare & reCAPTCHA', 'Multi-threading', 'Export CSV/JSON/Excel', 'Proxy rotation'],
+                    tech: ['Python', 'Selenium', 'BeautifulSoup', 'Requests'],
+                    code: `from web_scraper_pro import WebScraper\n\nscraper = WebScraper()\ndata = scraper.scrape('https://example.com')\nprint(data)`,
+                    icon: 'fas fa-spider',
+                    status: 'active'
+                },
+                {
+                    id: 2,
+                    name: 'Auto Trading Bot',
+                    category: 'trading',
+                    price: 1999000,
+                    difficulty: 'advanced',
+                    description: 'Bot giao dịch tự động cho cryptocurrency và forex với AI prediction',
+                    features: ['AI-powered predictions', 'Risk management', 'Multi-exchange support', 'Real-time alerts', 'Backtesting'],
+                    tech: ['Python', 'TensorFlow', 'Pandas', 'CCXT'],
+                    code: `from auto_trader import TradingBot\n\nbot = TradingBot()\nbot.start_trading(pair='BTC/USDT')`,
+                    icon: 'fas fa-chart-line',
+                    status: 'active'
+                },
+                {
+                    id: 3,
+                    name: 'Data Analysis Suite',
+                    category: 'analysis',
+                    price: 699000,
+                    difficulty: 'beginner',
+                    description: 'Bộ công cụ phân tích dữ liệu toàn diện với visualization và reporting',
+                    features: ['Interactive dashboards', 'Statistical analysis', 'Machine learning', 'PDF reports', 'Excel integration'],
+                    tech: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly'],
+                    code: `from data_suite import Analyzer\n\nanalyzer = Analyzer()\nresult = analyzer.analyze('data.csv')`,
+                    icon: 'fas fa-chart-bar',
+                    status: 'active'
+                },
+                {
+                    id: 4,
+                    name: 'Process Automation',
+                    category: 'automation',
+                    price: 1299000,
+                    difficulty: 'intermediate',
+                    description: 'Tự động hóa quy trình làm việc với GUI automation và API integration',
+                    features: ['GUI automation', 'File processing', 'Email automation', 'Schedule tasks', 'Database integration'],
+                    tech: ['Python', 'PyAutoGUI', 'Schedule', 'SQLAlchemy'],
+                    code: `from process_auto import Automator\n\nauto = Automator()\nauto.run_workflow('daily_report')`,
+                    icon: 'fas fa-robot',
+                    status: 'active'
+                }
+            ];
+            
+            products = defaultProducts;
+            localStorage.setItem('products', JSON.stringify(products));
+        }
+
+        function loadProducts() {
+            if (products.length === 0) {
+                initializeDefaultProducts();
+            }
+        }
+
+        function displayTools(filteredProducts = null) {
+            const toolsGrid = document.getElementById('toolsGrid');
+            const productsToShow = filteredProducts || products.filter(p => p.status === 'active');
+            
+            if (productsToShow.length === 0) {
+                toolsGrid.innerHTML = '<div class="col-12 text-center"><p>Không tìm thấy sản phẩm nào.</p></div>';
+                return;
+            }
+            
+            const toolsHtml = productsToShow.map(product => `
+                <div class="col-lg-4 col-md-6 fade-in-up">
+                    <div class="tool-card">
+                        <div class="card-header">
+                            <div class="price-tag">${formatPrice(product.price)}</div>
+                            <div class="tool-icon">
+                                <i class="${product.icon}"></i>
+                            </div>
+                            <h4 class="text-white">${product.name}</h4>
+                            <span class="difficulty-badge difficulty-${product.difficulty}">
+                                ${getDifficultyText(product.difficulty)}
+                            </span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-muted mb-3">${product.description}</p>
+                            
+                            <div class="tech-stack">
+                                ${product.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                            </div>
+                            
+                            <ul class="list-unstyled mb-4">
+                                ${product.features.slice(0, 3).map(feature => `<li><i class="fas fa-check text-success me-2"></i>${feature}</li>`).join('')}
+                            </ul>
+                            
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-python flex-fill" onclick="viewProduct(${product.id})">
+                                    <i class="fas fa-eye"></i> Xem chi tiết
+                                </button>
+                                <button class="btn btn-python" onclick="addToCart(${product.id})">
+                                    <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            toolsGrid.innerHTML = toolsHtml;
+        }
+
+        function filterTools() {
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const priceFilter = document.getElementById('priceFilter').value;
+            
+            let filtered = products.filter(p => p.status === 'active');
+            
+            if (categoryFilter) {
+                filtered = filtered.filter(p => p.category === categoryFilter);
+            }
+            
+            if (priceFilter) {
+                const [min, max] = priceFilter.split('-').map(Number);
+                filtered = filtered.filter(p => p.price >= min && p.price <= max);
+            }
+            
+            displayTools(filtered);
+        }
+
+        function filterByCategory(category) {
+            document.getElementById('categoryFilter').value = category;
+            showPage('tools');
+            setTimeout(() => filterTools(), 100);
+        }
+
+        function viewProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+            
+            document.getElementById('productModalTitle').textContent = product.name;
+            
+            const modalBody = document.getElementById('productModalBody');
+            modalBody.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="text-center mb-4">
+                            <div class="tool-icon text-primary" style="font-size: 4rem;">
+                                <i class="${product.icon}"></i>
+                            </div>
+                            <h3>${product.name}</h3>
+                            <div class="price-tag d-inline-block">${formatPrice(product.price)}</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <span class="difficulty-badge difficulty-${product.difficulty}">
+                                ${getDifficultyText(product.difficulty)}
+                            </span>
+                        </div>
+                        
+                        <p>${product.description}</p>
+                        
+                        <h6>Công nghệ sử dụng:</h6>
+                        <div class="tech-stack mb-3">
+                            ${product.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h6>Tính năng:</h6>
+                        <ul class="list-unstyled mb-4">
+                            ${product.features.map(feature => `<li><i class="fas fa-check text-success me-2"></i>${feature}</li>`).join('')}
+                        </ul>
+                        
+                        <h6>Code demo:</h6>
+                        <div class="code-preview">
+                            ${product.code}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('addToCartBtn').onclick = () => {
+                addToCart(id);
+                bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
+            };
+            
+            new bootstrap.Modal(document.getElementById('productModal')).show();
+        }
+
+        // Cart functions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                showToast('Sản phẩm đã có trong giỏ hàng!', 'warning');
+                return;
+            }
+            
+            cart.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                icon: product.icon
+            });
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+            showToast('Đã thêm vào giỏ hàng!', 'success');
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+            showToast('Đã xóa khỏi giỏ hàng!', 'success');
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotalAmount = document.getElementById('cartTotalAmount');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            
+            cartCount.textContent = cart.length;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="p-4 text-center text-muted">Giỏ hàng trống</div>';
+                cartTotalAmount.textContent = '0₫';
+                checkoutBtn.disabled = true;
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotalAmount.textContent = formatPrice(total);
+            checkoutBtn.disabled = false;
+            
+            const cartHtml = cart.map(item => `
+                <div class="cart-item">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <i class="${item.icon} text-primary" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1">${item.name}</h6>
+                            <small class="text-muted">${formatPrice(item.price)}</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${item.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            cartItems.innerHTML = cartHtml;
+        }
+
+        function toggleCart() {
+            const cartSidebar = document.querySelector('.cart-sidebar');
+            const cartOverlay = document.querySelector('.cart-overlay');
+            
+            cartSidebar.classList.toggle('show');
+            cartOverlay.classList.toggle('show');
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+            
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            const orderSummary = document.getElementById('orderSummary');
+            
+            orderSummary.innerHTML = `
+                <div class="border rounded p-3">
+                    ${cart.map(item => `
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>${item.name}</span>
+                            <span>${formatPrice(item.price)}</span>
+                        </div>
+                    `).join('')}
+                    <hr>
+                    <div class="d-flex justify-content-between fw-bold">
+                        <span>Tổng cộng:</span>
+                        <span>${formatPrice(total)}</span>
+                    </div>
+                </div>
+            `;
+            
+            toggleCart();
+            new bootstrap.Modal(document.getElementById('paymentModal')).show();
+        }
+
+        // Payment functions
+        function selectBank(bankType) {
+            // Remove selected class from all bank cards
+            document.querySelectorAll('.bank-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked card
+            event.currentTarget.classList.add('selected');
+            
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            const orderId = 'PTS' + Date.now();
+            
+            document.getElementById('paymentAmount').textContent = formatPrice(total);
+            document.getElementById('paymentContent').textContent = `Thanh toan don hang ${orderId}`;
+            
+            // Generate QR code (mock)
+            const qrCodeImage = document.getElementById('qrCodeImage');
+            qrCodeImage.innerHTML = `
+                <div class="bg-light p-4 rounded" style="width: 200px; height: 200px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-qrcode" style="font-size: 4rem; color: #666;"></i>
+                </div>
+            `;
+            
+            document.getElementById('qrCodeSection').style.display = 'block';
+            document.getElementById('confirmPaymentBtn').style.display = 'block';
+        }
+
+        function confirmPayment() {
+            const orderId = 'PTS' + Date.now();
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            
+            const order = {
+                id: orderId,
+                items: [...cart],
+                total: total,
+                customerEmail: currentUser ? currentUser.email : 'guest@example.com',
+                customerName: currentUser ? currentUser.username : 'Guest',
+                status: 'pending',
+                createdAt: new Date().toISOString()
+            };
+            
+            orders.push(order);
+            localStorage.setItem('orders', JSON.stringify(orders));
+            
+            // Clear cart
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+            
+            bootstrap.Modal.getInstance(document.getElementById('paymentModal')).hide();
+            
+            showToast(`Đặt hàng thành công! Mã đơn hàng: ${orderId}`, 'success');
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                const orderIndex = orders.findIndex(o => o.id === orderId);
+                if (orderIndex !== -1) {
+                    orders[orderIndex].status = 'completed';
+                    localStorage.setItem('orders', JSON.stringify(orders));
+                }
+                showToast('Thanh toán đã được xác nhận! Sản phẩm đã được gửi qua email.', 'success');
+            }, 3000);
+        }
+
+        // Admin functions
+        function showAdminPage(pageName) {
+            // Hide all admin sections
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Remove active class from all nav links
+            document.querySelectorAll('.admin-nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById('admin' + pageName.charAt(0).toUpperCase() + pageName.slice(1)).style.display = 'block';
+            
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+            
+            // Load section-specific content
+            switch(pageName) {
+                case 'dashboard':
+                    loadAdminDashboard();
+                    break;
+                case 'products':
+                    loadAdminProducts();
+                    break;
+                case 'orders':
+                    loadAdminOrders();
+                    break;
+                case 'users':
+                    loadAdminUsers();
+                    break;
+                case 'analytics':
+                    loadAdminAnalytics();
+                    break;
+            }
+        }
+
+        function loadAdminDashboard() {
+            document.getElementById('totalProducts').textContent = products.length;
+            document.getElementById('totalOrders').textContent = orders.length;
+            document.getElementById('totalUsers').textContent = users.length;
+            
+            const totalRevenue = orders
+                .filter(o => o.status === 'completed')
+                .reduce((sum, order) => sum + order.total, 0);
+            document.getElementById('totalRevenue').textContent = formatPrice(totalRevenue);
+            
+            // Load recent orders
+            const recentOrders = orders.slice(-5).reverse();
+            const recentOrdersTable = document.getElementById('recentOrdersTable');
+            recentOrdersTable.innerHTML = recentOrders.map(order => `
+                <tr>
+                    <td>${order.id}</td>
+                    <td>${order.customerName}</td>
+                    <td>${formatPrice(order.total)}</td>
+                    <td>
+                        <span class="badge bg-${order.status === 'completed' ? 'success' : order.status === 'pending' ? 'warning' : 'danger'}">
+                            ${getStatusText(order.status)}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+            
+            // Load top products
+            const productSales = {};
+            orders.filter(o => o.status === 'completed').forEach(order => {
+                order.items.forEach(item => {
+                    if (!productSales[item.id]) {
+                        productSales[item.id] = { name: item.name, count: 0, revenue: 0 };
+                    }
+                    productSales[item.id].count++;
+                    productSales[item.id].revenue += item.price;
+                });
+            });
+            
+            const topProducts = Object.values(productSales)
+                .sort((a, b) => b.count - a.count)
+                .slice(0, 5);
+            
+            const topProductsTable = document.getElementById('topProductsTable');
+            topProductsTable.innerHTML = topProducts.map(product => `
+                <tr>
+                    <td>${product.name}</td>
+                    <td>${product.count}</td>
+                    <td>${formatPrice(product.revenue)}</td>
+                </tr>
+            `).join('');
+        }
+
+        function loadAdminProducts() {
+            const productsTable = document.getElementById('productsTable');
+            productsTable.innerHTML = products.map(product => `
+                <tr>
+                    <td>${product.id}</td>
+                    <td>${product.name}</td>
+                    <td>${getCategoryText(product.category)}</td>
+                    <td>${formatPrice(product.price)}</td>
+                    <td>
+                        <span class="badge bg-${product.status === 'active' ? 'success' : 'secondary'}">
+                            ${product.status === 'active' ? 'Hoạt động' : 'Tạm dừng'}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary" onclick="editProduct(${product.id})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger" onclick="deleteProduct(${product.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function loadAdminOrders() {
+            const ordersTable = document.getElementById('ordersTable');
+            ordersTable.innerHTML = orders.map(order => `
+                <tr>
+                    <td>${order.id}</td>
+                    <td>${order.customerName}</td>
+                    <td>${order.customerEmail}</td>
+                    <td>${order.items.length} sản phẩm</td>
+                    <td>${formatPrice(order.total)}</td>
+                    <td>
+                        <select class="form-select form-select-sm" onchange="updateOrderStatus('${order.id}', this.value)">
+                            <option value="pending" ${order.status === 'pending' ? 'selected' : ''}>Chờ xử lý</option>
+                            <option value="completed" ${order.status === 'completed' ? 'selected' : ''}>Hoàn thành</option>
+                            <option value="cancelled" ${order.status === 'cancelled' ? 'selected' : ''}>Hủy</option>
+                        </select>
+                    </td>
+                    <td>${new Date(order.createdAt).toLocaleDateString('vi-VN')}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-info" onclick="viewOrderDetail('${order.id}')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function loadAdminUsers() {
+            const usersTable = document.getElementById('usersTable');
+            usersTable.innerHTML = users.map(user => {
+                const userOrders = orders.filter(o => o.customerEmail === user.email);
+                const totalSpent = userOrders.reduce((sum, order) => sum + order.total, 0);
+                
+                return `
+                    <tr>
+                        <td>${user.id}</td>
+                        <td>${user.username}</td>
+                        <td>${user.email}</td>
+                        <td>
+                            <span class="badge bg-${user.isVerified ? 'success' : 'warning'}">
+                                ${user.isVerified ? 'Đã xác thực' : 'Chờ xác thực'}
+                            </span>
+                        </td>
+                        <td>${user.keys ? user.keys.length : 0}</td>
+                        <td>${userOrders.length}</td>
+                        <td>${formatPrice(totalSpent)}</td>
+                        <td>${new Date(user.createdAt).toLocaleDateString('vi-VN')}</td>
+                        <td>
+                            ${!user.isVerified ? `
+                                <button class="btn btn-sm btn-outline-success me-1" onclick="verifyUser(${user.id})" title="Xác thực">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            ` : ''}
+                            <button class="btn btn-sm btn-outline-primary me-1" onclick="manageUserKeys(${user.id})" title="Quản lý Keys">
+                                <i class="fas fa-key"></i>
+                            </button>
+                            ${user.role !== 'admin' ? `
+                                <button class="btn btn-sm btn-outline-danger" onclick="deleteUser(${user.id})" title="Xóa">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            ` : ''}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function verifyUser(userId) {
+            const userIndex = users.findIndex(u => u.id === userId);
+            if (userIndex !== -1) {
+                users[userIndex].isVerified = true;
+                localStorage.setItem('users', JSON.stringify(users));
+                loadAdminUsers();
+                showToast('Xác thực tài khoản thành công!', 'success');
+            }
+        }
+
+        function manageUserKeys(userId) {
+            const user = users.find(u => u.id === userId);
+            if (!user) return;
+
+            document.getElementById('keyManagerUserId').value = userId;
+            document.getElementById('keyManagerUserName').textContent = user.username;
+            
+            // Load user keys
+            const userKeysList = document.getElementById('userKeysList');
+            if (user.keys && user.keys.length > 0) {
+                userKeysList.innerHTML = user.keys.map(key => `
+                    <div class="key-item border rounded p-3 mb-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>${key.productName}</strong><br>
+                                <small class="text-muted">Key: ${key.key}</small><br>
+                                <small class="text-muted">Hết hạn: ${new Date(key.expiresAt).toLocaleDateString('vi-VN')}</small>
+                            </div>
+                            <div>
+                                <span class="badge bg-${key.status === 'active' ? 'success' : 'danger'}">
+                                    ${key.status === 'active' ? 'Hoạt động' : 'Hết hạn'}
+                                </span>
+                                <button class="btn btn-sm btn-outline-danger ms-2" onclick="removeUserKey(${userId}, '${key.key}')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                userKeysList.innerHTML = '<p class="text-muted">Chưa có key nào.</p>';
+            }
+
+            // Load available products for adding keys
+            const productSelect = document.getElementById('addKeyProductSelect');
+            productSelect.innerHTML = '<option value="">Chọn sản phẩm</option>' + 
+                products.map(product => `<option value="${product.id}">${product.name}</option>`).join('');
+
+            new bootstrap.Modal(document.getElementById('keyManagerModal')).show();
+        }
+
+        function addKeyToUser() {
+            const userId = parseInt(document.getElementById('keyManagerUserId').value);
+            const productId = parseInt(document.getElementById('addKeyProductSelect').value);
+            const duration = parseInt(document.getElementById('addKeyDuration').value);
+
+            if (!productId || !duration) {
+                showToast('Vui lòng chọn sản phẩm và nhập thời hạn!', 'error');
+                return;
+            }
+
+            const product = products.find(p => p.id === productId);
+            const userIndex = users.findIndex(u => u.id === userId);
+            
+            if (!product || userIndex === -1) return;
+
+            const newKey = {
+                key: 'KEY_' + Math.random().toString(36).substring(2, 15).toUpperCase(),
+                productId: productId,
+                productName: product.name,
+                createdAt: new Date().toISOString(),
+                expiresAt: new Date(Date.now() + duration * 24 * 60 * 60 * 1000).toISOString(),
+                status: 'active',
+                usageCount: 0,
+                maxUsage: 1000
+            };
+
+            if (!users[userIndex].keys) {
+                users[userIndex].keys = [];
+            }
+            users[userIndex].keys.push(newKey);
+
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            showToast('Thêm key thành công!', 'success');
+            manageUserKeys(userId); // Refresh modal
+        }
+
+        function removeUserKey(userId, keyToRemove) {
+            if (confirm('Bạn có chắc muốn xóa key này?')) {
+                const userIndex = users.findIndex(u => u.id === userId);
+                if (userIndex !== -1 && users[userIndex].keys) {
+                    users[userIndex].keys = users[userIndex].keys.filter(k => k.key !== keyToRemove);
+                    localStorage.setItem('users', JSON.stringify(users));
+                    showToast('Xóa key thành công!', 'success');
+                    manageUserKeys(userId); // Refresh modal
+                }
+            }
+        }
+
+        function loadAdminAnalytics() {
+            // This would typically involve Chart.js or similar library
+            // For now, we'll just show placeholder text
+            showToast('Analytics dashboard sẽ được cập nhật trong phiên bản tới!', 'info');
+        }
+
+        // Product CRUD operations
+        function saveProduct() {
+            const id = document.getElementById('productId').value;
+            const isEdit = id !== '';
+            
+            const productData = {
+                id: isEdit ? parseInt(id) : Date.now(),
+                name: document.getElementById('productName').value,
+                category: document.getElementById('productCategory').value,
+                price: parseInt(document.getElementById('productPrice').value),
+                difficulty: document.getElementById('productDifficulty').value,
+                description: document.getElementById('productDescription').value,
+                features: document.getElementById('productFeatures').value.split('\n').filter(f => f.trim()),
+                tech: document.getElementById('productTech').value.split(',').map(t => t.trim()),
+                code: document.getElementById('productCode').value,
+                icon: getCategoryIcon(document.getElementById('productCategory').value),
+                status: 'active'
+            };
+            
+            if (isEdit) {
+                const index = products.findIndex(p => p.id === parseInt(id));
+                products[index] = productData;
+            } else {
+                products.push(productData);
+            }
+            
+            localStorage.setItem('products', JSON.stringify(products));
+            
+            bootstrap.Modal.getInstance(document.getElementById('productFormModal')).hide();
+            loadAdminProducts();
+            showToast(isEdit ? 'Cập nhật sản phẩm thành công!' : 'Thêm sản phẩm thành công!', 'success');
+            
+            // Reset form
+            document.getElementById('productForm').reset();
+            document.getElementById('productId').value = '';
+            document.getElementById('productFormTitle').textContent = 'Thêm sản phẩm mới';
+        }
+
+        function editProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+            
+            document.getElementById('productId').value = product.id;
+            document.getElementById('productName').value = product.name;
+            document.getElementById('productCategory').value = product.category;
+            document.getElementById('productPrice').value = product.price;
+            document.getElementById('productDifficulty').value = product.difficulty;
+            document.getElementById('productDescription').value = product.description;
+            document.getElementById('productFeatures').value = product.features.join('\n');
+            document.getElementById('productTech').value = product.tech.join(', ');
+            document.getElementById('productCode').value = product.code;
+            
+            document.getElementById('productFormTitle').textContent = 'Chỉnh sửa sản phẩm';
+            new bootstrap.Modal(document.getElementById('productFormModal')).show();
+        }
+
+        function deleteProduct(id) {
+            if (confirm('Bạn có chắc muốn xóa sản phẩm này?')) {
+                products = products.filter(p => p.id !== id);
+                localStorage.setItem('products', JSON.stringify(products));
+                loadAdminProducts();
+                showToast('Xóa sản phẩm thành công!', 'success');
+            }
+        }
+
+        function updateOrderStatus(orderId, status) {
+            const orderIndex = orders.findIndex(o => o.id === orderId);
+            if (orderIndex !== -1) {
+                orders[orderIndex].status = status;
+                localStorage.setItem('orders', JSON.stringify(orders));
+                showToast('Cập nhật trạng thái đơn hàng thành công!', 'success');
+            }
+        }
+
+        // Utility functions
+        function formatPrice(price) {
+            return new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND'
+            }).format(price);
+        }
+
+        function getDifficultyText(difficulty) {
+            const texts = {
+                beginner: 'Beginner',
+                intermediate: 'Intermediate',
+                advanced: 'Advanced'
+            };
+            return texts[difficulty] || difficulty;
+        }
+
+        function getCategoryText(category) {
+            const texts = {
+                scraping: 'Web Scraping',
+                trading: 'Auto Trading',
+                analysis: 'Data Analysis',
+                automation: 'Automation'
+            };
+            return texts[category] || category;
+        }
+
+        function getCategoryIcon(category) {
+            const icons = {
+                scraping: 'fas fa-spider',
+                trading: 'fas fa-chart-line',
+                analysis: 'fas fa-chart-bar',
+                automation: 'fas fa-robot'
+            };
+            return icons[category] || 'fas fa-code';
+        }
+
+        function getStatusText(status) {
+            const texts = {
+                pending: 'Chờ xử lý',
+                completed: 'Hoàn thành',
+                cancelled: 'Hủy'
+            };
+            return texts[status] || status;
+        }
+
+        function showToast(message, type = 'info') {
+            const toastContainer = document.querySelector('.toast-container');
+            const toastId = 'toast-' + Date.now();
+            
+            const toast = document.createElement('div');
+            toast.id = toastId;
+            toast.className = `toast align-items-center text-white bg-${type === 'error' ? 'danger' : type} border-0`;
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <div class="d-flex">
+                    <div class="toast-body">${message}</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+            
+            // Remove toast element after it's hidden
+            toast.addEventListener('hidden.bs.toast', () => {
+                toast.remove();
+            });
+        }
+
+        // Data management
+        function exportData() {
+            const data = {
+                products,
+                orders,
+                users,
+                settings,
+                exportDate: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `python-tools-shop-backup-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importData(input) {
+            const file = input.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    if (data.products) products = data.products;
+                    if (data.orders) orders = data.orders;
+                    if (data.users) users = data.users;
+                    if (data.settings) settings = data.settings;
+                    
+                    localStorage.setItem('products', JSON.stringify(products));
+                    localStorage.setItem('orders', JSON.stringify(orders));
+                    localStorage.setItem('users', JSON.stringify(users));
+                    localStorage.setItem('settings', JSON.stringify(settings));
+                    
+                    showToast('Nhập dữ liệu thành công!', 'success');
+                    loadAdminDashboard();
+                } catch (error) {
+                    showToast('Lỗi khi nhập dữ liệu: ' + error.message, 'error');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function clearAllData() {
+            if (confirm('Bạn có chắc muốn xóa TẤT CẢ dữ liệu? Hành động này không thể hoàn tác!')) {
+                if (confirm('Xác nhận lần nữa: Xóa tất cả sản phẩm, đơn hàng và người dùng?')) {
+                    localStorage.clear();
+                    location.reload();
+                }
+            }
+        }
+
+        // Bank settings
+        document.getElementById('bankSettingsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            settings.banks = {
+                vietcombank: document.getElementById('vietcombankSTK').value,
+                techcombank: document.getElementById('techcombankSTK').value,
+                mbbank: document.getElementById('mbbankSTK').value,
+                momo: document.getElementById('momoPhone').value
+            };
+            
+            localStorage.setItem('settings', JSON.stringify(settings));
+            showToast('Lưu cài đặt thành công!', 'success');
+        });
+
+        // Auto-refresh functions
+        setInterval(() => {
+            if (currentUser && currentUser.role === 'admin') {
+                // Auto-update admin dashboard if visible
+                const adminDashboard = document.getElementById('adminDashboard');
+                if (adminDashboard && adminDashboard.style.display !== 'none') {
+                    loadAdminDashboard();
+                }
+            }
+        }, 30000); // Update every 30 seconds
+
+    </script>
+</body>
+</html>
